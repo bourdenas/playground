@@ -1,4 +1,4 @@
-#include <boost/algorithm/string/join.hpp>
+#include <absl/strings/str_join.h>
 #include <deque>
 #include <iostream>
 #include <map>
@@ -7,9 +7,9 @@
 #include <string>
 #include <vector>
 
-#include "algorithms.h"
-#include "backtracking.h"
-#include "graph.h"
+#include "lib/algorithms.h"
+#include "lib/backtracking.h"
+#include "lib/graph.h"
 
 using namespace ranges;
 
@@ -128,18 +128,18 @@ int main() {
   const auto subsets_temp = ComputeSubsets(input);
   const std::vector<std::string> subsets =
       subsets_temp | view::transform([](const auto& subset) {
-        return boost::algorithm::join(subset, ",");
+        return absl::StrJoin(subset, ",");
       });
   std::cout << "\n\nSubsets: " << subsets.size() << "\n";
-            // << boost::algorithm::join(subsets, "\n");
+  absl::StrJoin(subsets, "\n");
 
   const auto permutations_temp = ComputePermutations(input);
   const std::vector<std::string> permutations =
       permutations_temp | view::transform([](const auto& permutation) {
-        return boost::algorithm::join(permutation, ",");
+        return absl::StrJoin(permutation, ",");
       });
   std::cout << "\n\nPermutations: " << permutations.size() << "\n";
-            // << boost::algorithm::join(permutations, "\n");
+  absl::StrJoin(permutations, "\n");
 
   return 0;
 }

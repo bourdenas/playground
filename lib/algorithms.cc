@@ -1,6 +1,6 @@
 #include "algorithms.h"
 
-#include <boost/algorithm/string/join.hpp>
+#include <absl/strings/str_join.h>
 #include <deque>
 #include <iostream>
 #include <map>
@@ -127,7 +127,7 @@ void ConnectedComponents(const Graph& g) {
       return members.find(id) != members.end();
     });
 
-    std::cout << "\nComponent: " << boost::algorithm::join(members, ", ");
+    std::cout << "\nComponent: " << absl::StrJoin(members, ", ");
   }
 }
 
