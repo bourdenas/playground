@@ -17,11 +17,13 @@ int main() {
   Graph g({
       Node("A",
            {
-               Edge("B"), Edge("C"),
+               Edge("B"),
+               Edge("C"),
            }),
       Node("B",
            {
-               Edge("A"), Edge("D"),
+               Edge("A"),
+               Edge("D"),
            }),
       Node("C",
            {
@@ -94,7 +96,8 @@ int main() {
   Graph g2({
       Node("A",
            {
-               Edge("B"), Edge("C"),
+               Edge("B"),
+               Edge("C"),
            }),
       Node("B",
            {
@@ -115,9 +118,11 @@ int main() {
   Graph g3({
       Node("A",
            {
-               Edge("B"), Edge("C"),
+               Edge("B"),
+               Edge("C"),
            }),
-      Node("B", {Edge("A")}), Node("C", {}),
+      Node("B", {Edge("A")}),
+      Node("C", {}),
   });
   std::cout << "\n\nIsBipartite(g3)=" << IsBipartite(g3);
   std::cout << "\nIsCyclic(g3)=" << IsCyclic(g3);
