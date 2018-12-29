@@ -10,4 +10,5 @@ add_library(algo_lib ${SOURCES})
 # Depend on a libraries defined in the top-level file.
 target_link_libraries(algo_lib
   absl::strings
+  range-v3
 )
